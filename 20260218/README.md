@@ -48,6 +48,7 @@ pqms/php/api_patient_schedule.php?appointmentID
    ```
    http://localhost/pqms/
    ```
+   ![Description of image](https://github.com/rayficom/Proof-of-Concept/edit/main/20260218/20260218-pqms-001.png)
 
 2. Select either options
    ```
