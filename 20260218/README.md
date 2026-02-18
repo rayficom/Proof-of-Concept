@@ -11,8 +11,6 @@
 **Vulnerability Files:**
 - `/pqms/php/api_patient_schedule.php`
 
-pqms/php/api_patient_schedule.php?appointmentID
-
 ## Description:
 
 1. **Blind SQL Injection via Patient Check-in:**
