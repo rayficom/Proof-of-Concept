@@ -1,0 +1,53 @@
+## Title: SQL Injection Vulnerability in WebAppX ≤ 1.2.3
+
+**BUG_Author:** your_username
+
+**Affected Version:** WebAppX ≤ 1.2.3
+
+**Vendor:** [WebAppX GitHub Repository](https://github.com/example/WebAppX)
+
+**Software:** [WebAppX](https://github.com/example/WebAppX)
+
+**Vulnerability Files:**
+- `app/controller/user.class.php`
+
+## Description:
+
+1. **SQL Injection via User Login:**
+   - In the file `app/controller/user.class.php`, the login function does not properly sanitize user input before using it in an SQL query.
+   - This can be exploited by sending a crafted request to the login endpoint with malicious SQL code.
+
+2. **Exploiting the SQL Injection:**
+   - By injecting SQL commands into the username or password fields, an attacker can manipulate the SQL query to bypass authentication or extract sensitive information from the database.
+
+3. **Example SQL Injection Payload:**
+   - The following payload can be used to bypass authentication:
+     ```
+     Username: ' OR '1'='1
+     Password: ' OR '1'='1
+     ```
+
+4. **Requesting the Login Endpoint:**
+   - Make a request to the login endpoint with the SQL injection payload:
+     ```
+     http://<target-ip>/index.php?user/login
+     ```
+   - Use the above payload in the username and password fields.
+
+5. **Verifying the Exploit:**
+   - If the injection is successful, the attacker will be logged in as an authenticated user without needing valid credentials.
+
+## Proof of Concept:
+
+1. Access the login page of the vulnerable application:
+   ```
+   http://<target-ip>/index.php?user/login
+   ```
+
+2. Use the following credentials to attempt login:
+   ```
+   Username: ' OR '1'='1
+   Password: ' OR '1'='1
+   ```
+
+3. If successful, the application will log in the attacker without requiring valid credentials.
