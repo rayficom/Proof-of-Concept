@@ -67,9 +67,9 @@
    ```
    http://localhost/doctor-appointment-system/admin/users.php
    ``` 
-   ![Description of image](20260219-doctor-004.PNG)
+   ![Description of image](20260219-doctor-004.png)
    
-   ![Description of image](20260219-doctor-005.PNG)
+   ![Description of image](20260219-doctor-005.png)
 
 5. Access Manage Doctors page that trigger the malicious Javascript coding due to retrieve the user details of email:
    ```
